@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import CountryDetail from '../CountryDetail/CountryDetail';
 import './Country.css';
 const Country = ({country,handleVisitedCountries,handleVisitedFlags}) => {
     const {name,flags,capital,cca3} = country;
@@ -22,7 +23,12 @@ const Country = ({country,handleVisitedCountries,handleVisitedFlags}) => {
             <br />
             <button onClick={handleVisited}>Visited</button>
             {visited ? 'I have visited this country':'i want to visited'}
-            
+            <hr />
+            <CountryDetail
+                country={country}
+                handleVisitedCountries={handleVisitedCountries}
+                handleVisitedFlags={handleVisitedFlags}
+            ></CountryDetail>
         </div>
     );
 };
